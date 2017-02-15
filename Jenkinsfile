@@ -1,9 +1,10 @@
 pipeline {
     agent { docker 'node' }
     stages {
-        stage('experiment') {
+        stage('install gulp') {
             steps {
-                sh 'ls'
+                sh 'npm i -g gulp'
+                sh 'gulp --version'
             }
         }
     }
