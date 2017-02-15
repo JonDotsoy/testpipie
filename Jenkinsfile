@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('install gulp') {
             steps {
-                sh 'npm i -g gulp'
-                sh 'gulp --version'
+                sh 'npm i'
+                sh 'npm run gulp'
             }
         }
     }
