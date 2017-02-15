@@ -1,7 +1,7 @@
 pipeline {
     agent { docker 'ruby' }
     stages {
-        stages('build') {
+        stage('build') {
             steps {
                 sh 'bundle --version'
                 sh 'ruby --version'
