@@ -1,28 +1,11 @@
 pipeline {
-    agent { docker 'ruby' }
-    stages {
-        stage('build') {
-            steps {
-                sh 'bundle --version'
-                sh 'ruby --version'
-            }
-        }
-    }
-}
-pipeline {
     agent { docker 'node' }
     stages {
-        stage('test') {
+        stage('experiment') {
             steps {
-                sh 'echo ok'
-                sh 'exit 1' // Error
-            }
-        }
-        stage('build') {
-            steps {
-                sh 'node --version'
-                sh 'npm --version'
+                sh 'ls'
             }
         }
     }
 }
+
