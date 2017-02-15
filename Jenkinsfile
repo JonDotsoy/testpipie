@@ -1,10 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('install gulp') {
+        stage('specific') {
             steps {
-                sh 'npm i'
-                sh 'npm run gulp'
+                sh 'd --version'
+                sh 'dc --version'
+                sh 'dm --version'
             }
         }
     }
