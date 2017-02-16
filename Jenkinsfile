@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'uname -a'
+                sh 'ls'
+                sh 'touch on-node.txt'
                 sh 'ls'
             }
         }
@@ -15,10 +16,20 @@ pipeline {
     stages {
         stage('specific') {
             steps {
-                sh 'uname -a'
-                sh 'd --version'
-                sh 'dc --version'
-                sh 'dm --version'
+                sh 'ls'
+                sh 'touch on-any.txt'
+                sh 'ls'
+            }
+        }
+    }
+}
+
+pipeline {
+    agent { docker 'node:7.5.0-alpine' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'ls'
             }
         }
     }
