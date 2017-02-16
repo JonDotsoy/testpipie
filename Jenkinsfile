@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ls'
-                sh 'touch on-node.txt'
-                sh 'ls'
+                sh 'npm install --global gulp'
+                sh 'gulp --version'
             }
         }
     }
@@ -24,14 +23,4 @@ pipeline {
     }
 }
 
-pipeline {
-    agent { docker 'node:7.5.0-alpine' }
-    stages {
-        stage('build') {
-            steps {
-                sh 'ls'
-            }
-        }
-    }
-}
 
