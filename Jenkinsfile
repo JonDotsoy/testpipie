@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'uname -a'
                 sh 'ls'
             }
         }
@@ -14,6 +15,7 @@ pipeline {
     stages {
         stage('specific') {
             steps {
+                sh 'uname -a'
                 sh 'd --version'
                 sh 'dc --version'
                 sh 'dm --version'
