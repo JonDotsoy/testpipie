@@ -5,26 +5,23 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'set npm_config_cache=npm-cache'
-                sh 'set HOME=.'
-                sh 'npm install --global gulp'
-                sh 'gulp --version'
+                sh 'env'
             }
         }
     }
 }
 
-pipeline {
-    agent any
-    stages {
-        stage('specific') {
-            steps {
-                sh 'ls'
-                sh 'touch on-any.txt'
-                sh 'ls'
-            }
-        }
-    }
-}
+// pipeline {
+//     agent any
+//     stages {
+//         stage('specific') {
+//             steps {
+//                 sh 'ls'
+//                 sh 'touch on-any.txt'
+//                 sh 'ls'
+//             }
+//         }
+//     }
+// }
 
 
