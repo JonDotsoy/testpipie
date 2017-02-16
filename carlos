@@ -1,0 +1,3 @@
+RUN ls 
+
+RUN env
