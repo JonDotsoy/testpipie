@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'set npm_config_cache=npm-cache'
                 sh 'npm install --global gulp'
                 sh 'gulp --version'
             }
